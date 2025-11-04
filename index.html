@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>가루와 주현의 하루</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink-light: #FFE4EC;
+      --pink: #F9A8C7;
+      --rose: #F472B6;
+      --white: #FFF8FA;
+      --brown: #6B4E4E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Nunito', 'Gowun Dodum', sans-serif;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--brown);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 245, 248, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--rose);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--brown);
+      font-weight: 600;
+      margin-left: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--rose);
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #home {
+      background: linear-gradient(-45deg, #FFD6E8, #FFE4EC, #FFF8FA, #FFDDEE);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #home h2 {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+      color: var(--brown);
+    }
+
+    #home p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      color: #654E4E;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--rose);
+      margin-bottom: 1.2rem;
+    }
+
+    .content {
+      max-width: 700px;
+      line-height: 1.9;
+      color: #654E4E;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: var(--rose);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav a {
+        margin: 0.5rem;
+      }
+      #home h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>가루와 주현의 하루</h1>
+    <nav>
+      <a href="#home">홈</a>
+      <a href="#garu">가루의 하루</a>
+      <a href="#juhyun">주현의 이야기</a>
+      <a href="#photos">사진첩</a>
+      <a href="#record">기록</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>🐾 가루와 주현의 하루</h2>
+    <p>햇살이 부드럽게 스며드는 오후, 고양이 김가루는 창가에 앉아 졸고 있습니다.<br>
+    그 옆에는 따뜻한 마음을 가진 주현이, 조용히 책을 넘기며 하루를 보내죠.<br>
+    이곳은 그들의 사랑스럽고 평화로운 이야기를 담은 공간입니다.</p>
+  </section>
+
+  <section id="garu">
+    <h3 class="section-title">😺 김가루의 하루</h3>
+    <div class="content">
+      <p>김가루는 아침 햇살을 제일 좋아해요.  
+      꼬리를 살짝 흔들며 일어나면 주현이가 건네주는 간식 냄새가 코끝을 간질이죠.<br>
+      창가를 바라보며 졸다가도, 주현이의 목소리가 들리면 세상 누구보다 빠르게 달려와요.<br>
+      김가루에게 주현은 세상에서 가장 포근한 존재랍니다.</p>
+    </div>
+  </section>
+
+  <section id="juhyun">
+    <h3 class="section-title">💗 주현의 이야기</h3>
+    <div class="content">
+      <p>주현은 김가루를 세상 누구보다 사랑해요.  
+      “오늘도 가루는 너무 귀엽다.” 하루에 몇 번이고 중얼거리며,  
+      고양이의 눈빛 하나에도 마음이 녹아내리죠.  
+      피곤한 날에도 가루가 머리를 비비며 안기면, 세상 모든 게 괜찮아져요.</p>
+    </div>
+  </section>
+
+  <section id="photos">
+    <h3 class="section-title">📸 사진첩</h3>
+    <div class="gallery">
+      <img src="https://placekitten.com/400/400" alt="가루 1">
+      <img src="https://placekitten.com/401/400" alt="가루 2">
+      <img src="https://placekitten.com/402/400" alt="가루 3">
+      <img src="https://placekitten.com/403/400" alt="가루 4">
+    </div>
+  </section>
+
+  <section id="record">
+    <h3 class="section-title">🩷 사랑스러운 기록</h3>
+    <div class="content">
+      <p>“가루는 주현의 세상이고, 주현은 가루의 우주야.”  
+      서로의 온기를 닮아가는 두 존재.  
+      햇살과 냥이털 사이로 피어나는 하루의 온도는, 언제나 분홍빛입니다.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 가루와 주현의 하루 | All Love Reserved 💕</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
